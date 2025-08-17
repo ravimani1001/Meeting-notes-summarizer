@@ -30,8 +30,8 @@ It is built with **Vite + React + Tailwind CSS**.
 1. Clone the repository:
 
 ```bash
-git clone <frontend-repo-url>
-cd <frontend-folder>
+git clone https://github.com/ravimani1001/Meeting-notes-summarizer.git
+cd frontend
 ```
 
 2. Install dependencies:
