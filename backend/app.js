@@ -12,9 +12,9 @@ import shareRoutes from "./routes/shareRoutes.js";
 app.use(express.json());
 const allowedOrigins = ['http://localhost:5173' , 'https://meeting-notes-summarizer-lake.vercel.app']
 app.use(cors(
-  {
-    origin: allowedOrigins,
-  }
+  // {
+  //   origin: allowedOrigins,
+  // }
 ))
 
 // Health check route
