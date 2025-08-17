@@ -31,7 +31,7 @@ export default function SummarizeForm() {
     formData.append("prompt", prompt);
 
     try {
-      const res = await fetch("http://localhost:5000/api/summarize", {
+      const res = await fetch("https://meeting-notes-summarizer-t8ti.onrender.com/api/summarize", {
         method: "POST",
         body: formData,
       });
@@ -116,7 +116,7 @@ export default function SummarizeForm() {
                 const recipients = emails.split(",").map((email) => email.trim());
 
                 try {
-                const res = await fetch("http://localhost:5000/api/share", {
+                const res = await fetch("https://meeting-notes-summarizer-t8ti.onrender.com/api/share", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
