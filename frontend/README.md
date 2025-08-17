@@ -3,6 +3,8 @@
 This is the **frontend** for the AI-powered Meeting Notes Summarizer & Email Sharing application.\
 It is built with **Vite + React + Tailwind CSS**.
 
+**Live Link** - [Link](https://meeting-notes-summarizer-lake.vercel.app/)
+
 ---
 
 ## Features
