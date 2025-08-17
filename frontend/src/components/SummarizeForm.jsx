@@ -8,6 +8,7 @@ export default function SummarizeForm() {
   const [summary, setSummary] = useState("");
 
   const [emails, setEmails] = useState("");
+  const [error, setError] = useState("");
   const [subject, setSubject] = useState("Meeting Summary");
 
 
@@ -36,9 +37,12 @@ export default function SummarizeForm() {
         body: formData,
       });
       const data = await res.json();
+      if(data?.error)
+        setError(data?.error || "Provide required fields and only .txt/.doc files")
       setSummary(data.summary);
     } catch (err) {
       console.error(err);
+      setError(err.error || "Provide required fields and only .txt/.doc files")
       alert("Error generating summary.");
     } finally {
       setLoading(false);
@@ -48,6 +52,9 @@ export default function SummarizeForm() {
   return (
     <div className="max-w-2xl w-full bg-white p-6 rounded shadow">
         <h1 className="text-2xl text-center mb-10 font-bold">Summarize Meeting Notes And Share Them</h1>
+         {error && (
+          <p className="text-red-700 text-center text-sm">{error}</p>
+         )}
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block font-medium">Upload File (.txt/.doc)</label>
